@@ -67,52 +67,12 @@ public class Algorithms
       }
     } while (
     
-
-
-
-
-
-
-
-
-
-
-
-
-
-
-
-
-
-
-
-
-
-
-
-
-
-
-
-
-
-
-
-
-
-
-
       delta >= epsilon * (1.0D - GAMMA) / (2.0D * GAMMA));
     long endTime = System.currentTimeMillis();
     executionTime = endTime - startTime;
     return new AlgorithmResult(policy, utility, iterations, executionTime);
   }
   
-
-
-
-
-
   public static AlgorithmResult acceleratedValueIteration(Environment env, double epsilon, double GAMMA)
   {
     int iterations = 0;
@@ -175,45 +135,6 @@ public class Algorithms
       }
     } while (
     
-
-
-
-
-
-
-
-
-
-
-
-
-
-
-
-
-
-
-
-
-
-
-
-
-
-
-
-
-
-
-
-
-
-
-
-
-
-
-
       delta >= epsilon * (1.0D - GAMMA) / (2.0D * GAMMA));
     
     long endTime = System.currentTimeMillis();
@@ -222,8 +143,7 @@ public class Algorithms
     return new AlgorithmResult(policy, utility, iterations, executionTime);
   }
   
-
-
+  
   public static AlgorithmResult policyIteration(Environment env, double GAMMA)
   {
     long executionTime = 0L;
@@ -283,12 +203,6 @@ public class Algorithms
   }
   
 
-
-
-
-
-
-
   public static int getRandomNextState(double[][] R, int currentState)
   {
     int randomNextState = -1;
@@ -304,10 +218,6 @@ public class Algorithms
     return randomNextState;
   }
   
-
-
-
-
 
   public static double[] policyEvaluation(int[] policy, double[] utility, double[][] rewardMatrix, double GAMMA)
   {
