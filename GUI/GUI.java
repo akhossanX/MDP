@@ -28,13 +28,6 @@ import javax.swing.JPanel;
 import javax.swing.JTextField;
 
 
-
-
-
-
-
-
-
 public class GUI
   extends JFrame
 {
@@ -133,22 +126,6 @@ public class GUI
     MVI = new JButton("Accelerated VI");
     MVI.setBackground(Color.orange);
     
-
-
-
-
-
-
-
-
-
-
-
-
-
-
-
-
     paint();
   }
   
@@ -170,8 +147,6 @@ public class GUI
     generate.setPreferredSize(new Dimension(100, 30));
     generate.setFont(new Font("American Typewriter", 1, 12));
     
-
-
     Font labelFont = new Font("American Typewriter", 0, 12);
     statesLabel.setFont(labelFont);statesLabel.setForeground(Color.black);
     obsPerLabel.setFont(labelFont);obsPerLabel.setForeground(Color.black);
@@ -278,9 +253,7 @@ public class GUI
     implements ActionListener
   {
     GenerateEnvironmentListener() {}
-    
-
-
+  
     public void actionPerformed(ActionEvent event)
     {
       numOfStates = Integer.parseInt(numberOfStates.getText());
@@ -394,9 +367,7 @@ public class GUI
             isUnreachable = true;
             break;
           }
-          
-
-
+     
           pathTracking.add(Integer.valueOf(policy[i]));
           
           i = policy[i];
@@ -458,8 +429,6 @@ public class GUI
       ArrayList<Integer> pathTracking = new ArrayList();
       int numberOfRows = env.getNumberOfRows();
       
-
-
       int i = env.getStartIndex();int count = 0;boolean isUnreachable = false;
       while (i != env.getGoalIndex())
       {
@@ -471,9 +440,7 @@ public class GUI
             isUnreachable = true;
             break;
           }
-          
-
-
+    
           pathTracking.add(Integer.valueOf(policy[i]));
           
           i = policy[i];
@@ -552,8 +519,6 @@ public class GUI
             break;
           }
           
-
-
           pathTracking.add(Integer.valueOf(policy[i]));
           
           i = policy[i];
@@ -599,8 +564,6 @@ public class GUI
     }
   }
   
-
-
   public void repaintEnvironment()
   {
     algoLabel.setText("Algorithmes de résolution:");
