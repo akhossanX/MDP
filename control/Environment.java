@@ -4,16 +4,6 @@ import java.io.PrintStream;
 import java.util.ArrayList;
 
 
-
-
-
-
-
-
-
-
-
-
 public class Environment
 {
   private int numberOfStates;
@@ -75,41 +65,28 @@ public class Environment
       obstacleStates.add(Integer.valueOf(obstacle.getRow() * (int)Math.sqrt(numberOfStates) + obstacle.getCol()));
     }
     
-
-
-
-
-
     do
     {
       initialState = Coordinate.generateRandom((int)Math.sqrt(numberOfStates));
     } while ((initialState.equals(goal)) || (obstacles.contains(initialState)) || (Math.abs(initialState.getCol() - goal.getCol()) < numberOfRows / 2) || (Math.abs(initialState.getRow() - goal.getRow()) < numberOfRows / 2));
     
-
-
-
     goalIndex = (goal.getRow() * (int)Math.sqrt(numberOfStates) + goal.getCol());
     
-
     startIndex = (initialState.getRow() * (int)Math.sqrt(numberOfStates) + initialState.getCol());
     
-
     R[goalIndex][goalIndex] = 1000.0D;
     
-
     if (goal.getCol() - 1 >= 0)
     {
       int westState = goal.getRow() * (int)Math.sqrt(numberOfStates) + (goal.getCol() - 1);
       R[westState][goalIndex] = 1000.0D;
     }
     
-
     if (goal.getCol() + 1 < (int)Math.sqrt(numberOfStates))
     {
       int eastState = goal.getRow() * (int)Math.sqrt(numberOfStates) + (goal.getCol() + 1);
       R[eastState][goalIndex] = 1000.0D;
-    }
-    
+    }  
 
     if (goal.getRow() - 1 >= 0)
     {
@@ -117,27 +94,21 @@ public class Environment
       R[northState][goalIndex] = 1000.0D;
     }
     
-
     if (goal.getRow() + 1 < (int)Math.sqrt(numberOfStates))
     {
       int southState = (goal.getRow() + 1) * (int)Math.sqrt(numberOfStates) + goal.getCol();
       R[southState][goalIndex] = 1000.0D;
     }
     
-
     for (Coordinate obstacle : obstacles)
     {
-      int obstacleIndex = obstacle.getRow() * (int)Math.sqrt(numberOfStates) + obstacle.getCol();
-      
+      int obstacleIndex = obstacle.getRow() * (int)Math.sqrt(numberOfStates) + obstacle.getCol();   
 
       if (obstacle.getCol() - 1 >= 0)
       {
-
         int westState = obstacle.getRow() * (int)Math.sqrt(numberOfStates) + (obstacle.getCol() - 1);
         R[westState][obstacleIndex] = Double.NEGATIVE_INFINITY;
       }
-      
-
       if (obstacle.getCol() + 1 < (int)Math.sqrt(numberOfStates))
       {
         int eastState = obstacle.getRow() * (int)Math.sqrt(numberOfStates) + (obstacle.getCol() + 1);
@@ -150,8 +121,6 @@ public class Environment
         int northState = (obstacle.getRow() - 1) * (int)Math.sqrt(numberOfStates) + obstacle.getCol();
         R[northState][obstacleIndex] = Double.NEGATIVE_INFINITY;
       }
-      
-
       if (obstacle.getRow() + 1 < (int)Math.sqrt(numberOfStates))
       {
         int southState = (obstacle.getRow() + 1) * (int)Math.sqrt(numberOfStates) + obstacle.getCol();
@@ -159,8 +128,9 @@ public class Environment
       }
     }
   }
-  
-
+  /*
+  **  For Debugging purposes
+  */
   public void drawEnvironment()
   {
     for (int i = 0; i < numberOfRows; i++)
