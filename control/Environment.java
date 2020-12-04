@@ -20,7 +20,7 @@ public class Environment
   public Environment(int numberOfStates, double obstaclesPer)
   {
     this.numberOfStates = ((int)Math.pow((int)Math.sqrt(numberOfStates), 2.0D));
-    numberOfRows = ((int)Math.sqrt(this.numberOfStates));
+    this.numberOfRows = ((int)Math.sqrt(this.numberOfStates));
     this.obstaclesPer = obstaclesPer;
     R = new double[this.numberOfStates][this.numberOfStates];
     obstacles = new ArrayList();
