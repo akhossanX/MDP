@@ -1,5 +1,5 @@
 
-NAME =	Main
+NAME =	Main.class
 
 SRCS =	Main.java \
 	environment/Environment.java \
@@ -10,11 +10,13 @@ SRCS =	Main.java \
 
 CLASSOBJS = *.class environment/*.class algorithms/*.class userInterface/*.class
 
-all:
+all: $(NAME) run
+
+$(NAME):
 	@javac $(SRCS)
 
 run:
-	@java $(NAME)
+	@java $(NAME:.class=)
 
 clean:
 	/bin/rm -f $(CLASSOBJS)
