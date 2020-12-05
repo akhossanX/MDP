@@ -1,17 +1,14 @@
-package control;
-
-
+package algorithms;
 
 public class AlgorithmResult
 {
   private int[] policy;
-  
   private int numberOfIterations;
-  
   private long executionTime = 0L;
   private double[] utilityFunction;
   
-  public AlgorithmResult(int[] policy, double[] utilityFunction, int numberOfIterations, long executionTime) {
+  public AlgorithmResult(int[] policy, double[] utilityFunction, int numberOfIterations, long executionTime) 
+  {
     this.policy = policy;
     this.numberOfIterations = numberOfIterations;
     this.utilityFunction = utilityFunction;
@@ -20,19 +17,21 @@ public class AlgorithmResult
   
   public int[] getPolicy()
   {
-    return policy;
+    return this.policy;
   }
   
   public int getNumberOfIterations()
   {
-    return numberOfIterations;
+    return this.numberOfIterations;
   }
   
-  public double[] getUtilityFunction() {
-    return utilityFunction;
+  public double[] getUtilityFunction() 
+  {
+    return this.utilityFunction;
   }
   
-  public long getExecutionTime() {
-    return executionTime;
+  public long getExecutionTime() 
+  {
+    return this.executionTime;
   }
 }
