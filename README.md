@@ -25,4 +25,4 @@ the project contains a Makefile, once you invoke it, it will compile the whole p
   make 
 ```
 after making the project, a windown interface will popup if nothing goes wrong during compilation, the window looks like the figure below.
-[User Interface Window](/assets/faculty.jpg)
+![User Interface Window](/assets/faculty.jpg)
