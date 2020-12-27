@@ -2,21 +2,27 @@
 NAME =	Main.class
 
 SRCS =	Main.java \
-	environment/Environment.java \
-	environment/Coordinate.java \
-	algorithms/Algorithms.java \
-	algorithms/AlgorithmResult.java \
-	userInterface/MarkovWindow.java
+		environment/Environment.java \
+		environment/Coordinate.java \
+		algorithms/Algorithms.java \
+		algorithms/AlgorithmResult.java \
+		userInterface/MarkovWindow.java
 
-CLASSOBJS = *.class environment/*.class algorithms/*.class userInterface/*.class
+CLASSDIR = class/
+
+CLASSOBJS = $(addprefix $(CLASSDIR), $(shell basename -a $(SRCS))
 
 all: $(NAME) run
 
-$(NAME):
-	@javac $(SRCS)
+$(NAME): $(CLASSDIR)
+	@javac $(SRCS) -d $<
+	@mv $(CLASSDIR)Main.class .
 
 run:
 	@java $(NAME:.class=)
 
 clean:
-	/bin/rm -f $(CLASSOBJS)
+	/bin/rm -rf $(CLASSDIR)
+
+$(CLASSDIR):
+	@mkdir -p $@

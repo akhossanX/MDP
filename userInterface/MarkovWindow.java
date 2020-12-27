@@ -84,8 +84,8 @@ public class MarkovWindow extends JFrame
         EventQueue.invokeLater(new Runnable() {
           public void run() {
             JPanel labelsJPanel = new JPanel(new GridLayout(2, 1));
-            JLabel label1 = new JLabel("Projet de fin d'études sous le thème: ");
-            JLabel label2 = new JLabel("Comparaison des methodes iteratives de resolution des processus decisionnels de Markov");
+            JLabel label1 = new JLabel("Java Desktop Application for learning purposes:");
+            JLabel label2 = new JLabel("Comparative-based study of Markov iterative algorithms");
             labelsJPanel.add(label1);labelsJPanel.add(label2);
             JOptionPane.showMessageDialog(
               null, 
@@ -301,7 +301,7 @@ public class MarkovWindow extends JFrame
 	    }
           }
         }
-        algoLabel.setText("Algorithme de résolution");algoLabel.setBackground(Color.BLACK);
+        algoLabel.setText("Algorithm");algoLabel.setBackground(Color.BLACK);
         panelEnvironment.validate();
         panelEnvironment.repaint();
       }
@@ -374,16 +374,16 @@ public class MarkovWindow extends JFrame
           stateSquare[row][column].repaint();
           stateSquare[row][column].revalidate();
         }
-        algoLabel.setText("Algorithme de résolution:");
+        algoLabel.setText("Algorithm:");
         algoLabel.setForeground(Color.black);
-        viLabel.setText(res.getNumberOfIterations() + " itérations");
+        viLabel.setText(res.getNumberOfIterations() + " iterations");
         viTimeLabel.setText("/" + res.getExecutionTime() + " ms");
       }
       else
       {
-        algoLabel.setText("le but est non atteignable ou la politique est sous-optimal");
+        algoLabel.setText("Unreachable goal or sub-optimal policy");
         algoLabel.setForeground(Color.red);
-        viLabel.setText(res.getNumberOfIterations() + " itérations");
+        viLabel.setText(res.getNumberOfIterations() + " iterations");
         viTimeLabel.setText("/" + res.getExecutionTime() + " ms");
         panelBottom.repaint();
         panelBottom.revalidate();
@@ -439,14 +439,14 @@ public class MarkovWindow extends JFrame
           stateSquare[row][column].repaint();
           stateSquare[row][column].revalidate();
         }
-        algoLabel.setText("Algorithme de résolution:");
+        algoLabel.setText("Algorithm:");
         algoLabel.setForeground(Color.black);
-        piLabel.setText(res.getNumberOfIterations() + " itérations");
+        piLabel.setText(res.getNumberOfIterations() + " iterations");
         piTimeLabel.setText("/" + res.getExecutionTime() + " ms");
       }
       else
       {
-        algoLabel.setText("le but est non atteignable ou la politique est sous-optimal");
+        algoLabel.setText("Unreachable goal or sub-optimal policy");
         algoLabel.setForeground(Color.red);
         piLabel.setText(res.getNumberOfIterations() + " itérations");
         piTimeLabel.setText("/" + res.getExecutionTime() + " ms");
@@ -506,16 +506,16 @@ public class MarkovWindow extends JFrame
           stateSquare[row][column].repaint();
           stateSquare[row][column].revalidate();
         }
-        algoLabel.setText("Algorithme de résolution:");
+        algoLabel.setText("Algorithm:");
         algoLabel.setForeground(Color.black);
-        mviLabel.setText(res.getNumberOfIterations() + " itérations");
+        mviLabel.setText(res.getNumberOfIterations() + " iterations");
         mviTimeLabel.setText("/" + res.getExecutionTime() + " ms");
       }
       else
       {
-        algoLabel.setText("le but est non atteignable ou la politique est sous-optimal");
+        algoLabel.setText("Unreachable goal or sub-optimal policy");
         algoLabel.setForeground(Color.red);
-        mviLabel.setText(res.getNumberOfIterations() + " itérations");
+        mviLabel.setText(res.getNumberOfIterations() + " iterations");
         mviTimeLabel.setText("/" + res.getExecutionTime() + " ms");
         panelBottom.repaint();
         panelBottom.revalidate();
@@ -525,13 +525,13 @@ public class MarkovWindow extends JFrame
   
   public void repaintEnvironment()
   {
-    algoLabel.setText("Algorithmes de résolution:");
+    algoLabel.setText("Algorithm:");
     algoLabel.setForeground(Color.black);
-    viLabel.setText("0 itérations");
+    viLabel.setText("0 iterations");
     viTimeLabel.setText("/0 ms");
-    piLabel.setText("0 itérations");
+    piLabel.setText("0 iterations");
     piTimeLabel.setText("/0 ms");
-    mviLabel.setText("0 itérations");
+    mviLabel.setText("0 iterations");
     mviTimeLabel.setText("/0 ms");
     ArrayList<Coordinate> obstacles = env.getObstaclesCoordinate();
     int rows = env.getNumberOfRows();
